@@ -1,11 +1,6 @@
 // ========================================
 // Desktop Portfolio - Main JavaScript
 // ========================================
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  base: '/desktop-portfolio/',
-})
 
 // State management
 const state = {
