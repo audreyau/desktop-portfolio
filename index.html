@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audrey's Desktop | Portfolio</title>
+  <link rel="icon" type="image/png" href="./assets/ponyo-avatar(1).png">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Lock Screen -->
+  <div id="lock-screen">
+    <div class="lock-screen-content">
+      <div class="lock-time" id="lock-time">12:00</div>
+      <div class="lock-date" id="lock-date">Wednesday, January 28</div>
+      <div class="lock-avatar" id="lock-screen-pfp">
+        <img src="./assets/ponyo-avatar.png">
+      </div>
+      <h1 class="lock-welcome">Welcome</h1>
+      <p class="lock-hint">Click anywhere to enter</p>
+    </div>
+  </div>
+
+  <div id="desktop">
+    <!-- Desktop Icons -->
+    <div class="desktop-icons">
+      <div class="icon" data-window="about">
+        <div class="icon-image">👩🏻‍💻</div>
+        <span>About Me</span>
+      </div>
+      <div class="icon" data-window="projects">
+        <div class="icon-image">⭐</div>
+        <span>Projects</span>
+      </div>
+      <!-- <div class="icon" data-window="skills">
+        <div class="icon-image">⭐</div>
+        <span>Skills</span>
+      </div> -->
+      <div class="icon" data-window="experience">
+        <div class="icon-image">📚</div>
+        <span>Experience</span>
+      </div>
+      <div class="icon" data-window="finder">
+        <div class="icon-image">📁</div>
+        <span>Files</span>
+      </div>
+      <div class="icon" data-window="terminal">
+        <div class="icon-image">💻</div>
+        <span>Terminal</span>
+      </div>
+      <div class="icon" data-window="settings">
+        <div class="icon-image">⚙️</div>
+        <span>Settings</span>
+      </div>
+    </div>
+
+    <!-- Windows Container -->
+    <div id="windows-container">
+      <!-- About Window -->
+      <div class="window" id="window-about" style="display: none;">
+        <div class="window-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">👩🏻‍💻 About Me</span>
+        </div>
+        <div class="window-content">
+          <div class="about-content">
+            <div class="avatar">
+                <img src="./assets/audrey-avatar.png" alt="Audrey's Avatar">
+            </div>
+            <div class="typewriter-container"><h1 class="typing-effect">Hi, I'm Audrey!</h1></div>
+            <p class="tagline">I make cool things :)</p>
+            <div class="bio">
+              <p>Welcome to my space! I'm a software engineer who enjoys turning ideas into reality through code.</p>
+              <p>When I'm not coding, you can find me dancing, making matcha, making music, taking pictures, or hanging out with my dog, Ponyo!</p>
+            </div>
+            <div class="quick-facts">
+              <div class="fact">📍 Beaverton, OR</div>
+              <div class="fact">🎓 Oregon State University (Class of 2025)</div>
+              <div class="fact">💼 Software Engineer at Nike</div>
+            </div>
+            <div class="about-contact">
+              <h3>Let's Connect!</h3>
+              <div class="contact-links">
+                <a href="mailto:audrey.wingkei.ekstrom@gmail.com" class="contact-item">
+                  <span class="contact-icon material-symbols-outlined">mail</span>
+                  <span>Email</span>
+                </a>
+                <a href="https://github.com/audreyau" class="contact-item" target="_blank">
+                  <span class="contact-icon">
+                    <img src="./assets/github-icon.png" alt="GitHub">
+                  </span>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/audreyekstrom" class="contact-item" target="_blank">
+                  <span class="contact-icon">
+                    <img src="./assets/linkedin-icon.png" alt="LinkedIn">
+                  </span>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Window -->
+      <div class="window" id="window-projects" style="display: none;">
+        <div class="window-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">⭐ Projects</span>
+        </div>
+        <div class="window-content" style="background: linear-gradient(135deg, #484751 0%, #4e4a4d 100%);">
+          <!-- <div class="project-container"> -->
+            <div class="projects-grid">
+              <div class="project-card" data-project="project1">
+                <div class="project-icon">💤</div>
+                <h3>Lavender</h3>
+                <p>A cool web application that does amazing things.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project2">
+                <div class="project-icon">🎹</div>
+                <h3>Deus</h3>
+                <p>Mobile app that makes life easier.</p>
+                <div class="project-tags">
+                  <span class="tag">React Native</span>
+                  <span class="tag">Firebase</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project3">
+                <div class="project-icon">🥘</div>
+                <h3>Flavor Flick</h3>
+                <p>A fun game built with modern web tech.</p>
+                <div class="project-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Canvas</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project4">
+                <div class="project-icon">⌨️</div>
+                <h3>C Shell</h3>
+                <p>AI-powered tool for productivity.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">ML</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project5">
+                <div class="project-icon">🐟</div>
+                <h3>Immersive 3D Aquarium Experience</h3>
+                <p>A cool web application that does amazing things.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project6">
+                <div class="project-icon">⛷️</div>
+                <h3>SkiVis</h3>
+                <p>Mobile app that makes life easier.</p>
+                <div class="project-tags">
+                  <span class="tag">React Native</span>
+                  <span class="tag">Firebase</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project7">
+                <div class="project-icon">💊</div>
+                <h3>EXZpiration</h3>
+                <p>A fun game built with modern web tech.</p>
+                <div class="project-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Canvas</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+              <div class="project-card" data-project="project8">
+                <div class="project-icon">⛅️</div>
+                <h3>Android Weather App</h3>
+                <p>AI-powered tool for productivity.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">ML</span>
+                </div>
+                <span class="project-link">View Details →</span>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+
+      <!-- Skills Window -->
+      <!-- <div class="window" id="window-skills" style="display: none;">
+        <div class="window-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">⭐ Skills</span>
+        </div>
+        <div class="window-content">
+          <div class="skills-content">
+            <div class="skill-category">
+              <h3>🎨 Frontend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">HTML/CSS</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">React</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>⚙️ Backend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">Node.js</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Databases</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>🛠️ Tools</h3>
+              <div class="skill-badges">
+                <span class="badge">Git</span>
+                <span class="badge">VS Code</span>
+                <span class="badge">Figma</span>
+                <span class="badge">Docker</span>
+                <span class="badge">AWS</span>
+                <span class="badge">Linux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Experience Window -->
+      <div class="window" id="window-experience" style="display: none;">
+        <div class="window-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">📚 Experience</span>
+        </div>
+        <div class="window-content">
+          <div class="experience-content">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+              <!-- Job 1 - Most Recent -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div class="job-title">Senior Software Engineer</div>
+                    <div class="job-date">2023 - Present</div>
+                  </div>
+                  <div class="job-company">🏢 Amazing Tech Company</div>
+                  <p class="job-description">
+                    Led development of key features, mentored junior developers, and improved system performance by 40%.
+                  </p>
+                  <div class="job-tech">
+                    <span class="job-tag">React</span>
+                    <span class="job-tag">Node.js</span>
+                    <span class="job-tag">AWS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Job 2 -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div class="job-title">Software Engineer</div>
+                    <div class="job-date">2021 - 2023</div>
+                  </div>
+                  <div class="job-company">🚀 Startup Inc.</div>
+                  <p class="job-description">
+                    Built and maintained full-stack web applications. Collaborated with cross-functional teams to deliver products on time.
+                  </p>
+                  <div class="job-tech">
+                    <span class="job-tag">Vue.js</span>
+                    <span class="job-tag">Python</span>
+                    <span class="job-tag">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Job 3 -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div class="job-title">Junior Developer</div>
+                    <div class="job-date">2019 - 2021</div>
+                  </div>
+                  <div class="job-company">💻 Tech Solutions LLC</div>
+                  <p class="job-description">
+                    Developed features for client projects, fixed bugs, and learned best practices from senior developers.
+                  </p>
+                  <div class="job-tech">
+                    <span class="job-tag">JavaScript</span>
+                    <span class="job-tag">HTML/CSS</span>
+                    <span class="job-tag">Git</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Education -->
+              <div class="timeline-item education">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                  <div class="job-header">
+                    <div class="job-title">Bachelor's in Computer Science</div>
+                    <div class="job-date">2015 - 2019</div>
+                  </div>
+                  <div class="job-company">🎓 University Name</div>
+                  <p class="job-description">
+                    Graduated with honors. Relevant coursework: Data Structures, Algorithms, Web Development, Databases.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div style="height:50px;"></div> -->
+            <div class="skill-category">
+              <h3>🎨 Frontend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">HTML/CSS</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">React</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>⚙️ Backend</h3>
+              <div class="skill-items">
+                <div class="skill-item">
+                  <span class="skill-name">Node.js</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Python</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <span class="skill-name">Databases</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>🛠️ Tools</h3>
+              <div class="skill-badges">
+                <span class="badge">Git</span>
+                <span class="badge">VS Code</span>
+                <span class="badge">Figma</span>
+                <span class="badge">Docker</span>
+                <span class="badge">AWS</span>
+                <span class="badge">Linux</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finder/Files Window -->
+      <div class="window" id="window-finder" style="display: none;">
+        <div class="window-header finder-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">📁 Files</span>
+        </div>
+        <div class="window-content finder-content">
+          <div class="finder-sidebar">
+            <div class="sidebar-section">
+              <h4>Favorites</h4>
+              <div class="sidebar-item active">
+                <span>📄</span> Documents
+              </div>
+              <!-- <div class="sidebar-item">
+                <span>⬇️</span> Downloads
+              </div> -->
+            </div>
+          </div>
+          <div class="finder-main">
+            <div class="finder-toolbar">
+              <span class="finder-path">📁 Documents</span>
+            </div>
+            <div class="finder-files">
+              <a href="#" class="file-item" data-file="resume">
+                <div class="file-icon">📄</div>
+                <div class="file-info">
+                  <span class="file-name">Resume.pdf</span>
+                  <span class="file-meta">PDF Document • 118 KB</span>
+                </div>
+                <div class="file-download">⬇️</div>
+              </a>
+              <!-- <a href="#" class="file-item" data-file="portfolio">
+                <div class="file-icon">🖼️</div>
+                <div class="file-info">
+                  <span class="file-name">Portfolio.zip</span>
+                  <span class="file-meta">ZIP Archive • 12.4 MB</span>
+                </div>
+                <div class="file-download">⬇️</div>
+              </a>
+              <a href="#" class="file-item" data-file="cover-letter">
+                <div class="file-icon">📝</div>
+                <div class="file-info">
+                  <span class="file-name">CoverLetter.pdf</span>
+                  <span class="file-meta">PDF Document • 89 KB</span>
+                </div>
+                <div class="file-download">⬇️</div>
+              </a>
+              <a href="#" class="file-item" data-file="references">
+                <div class="file-icon">👥</div>
+                <div class="file-info">
+                  <span class="file-name">References.pdf</span>
+                  <span class="file-meta">PDF Document • 156 KB</span>
+                </div>
+                <div class="file-download">⬇️</div>
+              </a>
+              <div class="file-item folder">
+                <div class="file-icon">📁</div>
+                <div class="file-info">
+                  <span class="file-name">Projects</span>
+                  <span class="file-meta">Folder • 4 items</span>
+                </div>
+              </div>
+              <div class="file-item folder">
+                <div class="file-icon">📁</div>
+                <div class="file-info">
+                  <span class="file-name">Certificates</span>
+                  <span class="file-meta">Folder • 3 items</span>
+                </div>
+              </div> -->
+            </div>
+            <div class="finder-footer">
+              <span>1 item</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project windows are created dynamically by JavaScript -->
+
+      <!-- Settings Window -->
+      <div class="window" id="window-settings" style="display: none;">
+        <div class="window-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">⚙️ Settings</span>
+        </div>
+        <div class="window-content">
+          <div class="settings-content">
+            <h2>🎨 Wallpaper</h2>
+            <p class="settings-desc">Choose a preset or upload your own image</p>
+            
+            <div class="settings-section">
+              <h3>Color Presets</h3>
+              <div class="wallpaper-presets">
+                <button class="wallpaper-preset active" data-wallpaper="gradient1" title="Mint & Pink">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient2" title="Purple Dream">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient3" title="Sunset">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient4" title="Ocean">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient5" title="Forest">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient6" title="Night Sky">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #0c0c1e 0%, #1a1a3e 50%, #2d1b4e 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient7" title="Peach">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></span>
+                </button>
+                <button class="wallpaper-preset" data-wallpaper="gradient8" title="Lavender">
+                  <span class="preset-preview" style="background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);"></span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Custom Image</h3>
+              <div class="custom-wallpaper">
+                <label class="upload-btn" for="wallpaper-upload">
+                  <span>📁</span> Choose Image
+                </label>
+                <input type="file" id="wallpaper-upload" accept="image/*" hidden>
+                <span class="upload-info" id="upload-info">No image selected</span>
+                <button class="clear-wallpaper-btn" id="clear-wallpaper" style="display: none;">
+                  ✕ Clear Image
+                </button>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Preview</h3>
+              <div class="wallpaper-preview-box" id="wallpaper-preview">
+                <div class="preview-desktop">
+                  <div class="preview-icons">
+                    <div class="preview-icon"></div>
+                    <div class="preview-icon"></div>
+                    <div class="preview-icon"></div>
+                  </div>
+                  <div class="preview-window"></div>
+                  <div class="preview-taskbar"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-section">
+              <h3>Desktop Layout</h3>
+              <p class="settings-hint">Drag icons anywhere on the desktop. Reset to restore default positions.</p>
+              <button class="reset-icons-btn" id="reset-icons-btn">
+                🔄 Reset Icon Positions
+              </button>
+            </div>
+
+            
+            <div style="height: 20px;"></div>
+          
+
+            <h2>👤 Profile Photo</h2>
+            <div class="settings-section">
+              
+                <p class="settings-desc">Upload a new profile picture for your account.</p>
+                
+              <h3>Custom Image</h3>
+              <div class="custom-wallpaper">
+                <label class="upload-btn" for="pfp-upload">
+                  <span>📁</span> Choose Image
+                </label>
+                <input type="file" id="pfp-upload" accept="image/*" hidden>
+                <span class="upload-info" id="upload-info-pfp">No image selected</span>
+                <button class="clear-wallpaper-btn" id="clear-pfp" style="display: none;">
+                  ✕ Clear Image
+                </button>
+              </div> 
+            </div>
+
+            <div style="height: 20px;"></div>
+
+            <h2>🖥️ Session Logout</h2>
+              <div class="settings-section">
+              <button class="logout-btn" id="logout-btn">
+                🔒 Lock Screen
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="window" id="window-terminal" style="display: none;">
+        <div class="window-header terminal-header">
+          <div class="window-controls">
+            <button class="window-btn close" data-action="close"></button>
+            <button class="window-btn minimize" data-action="minimize"></button>
+            <button class="window-btn maximize" data-action="maximize"></button>
+          </div>
+          <span class="window-title">💻 Terminal</span>
+        </div>
+        <div class="window-content terminal-content">
+          <div class="terminal-output" id="terminal-output">
+            <div class="terminal-line">Welcome to my portfolio terminal! Type 'help' for commands.</div>
+            <div class="terminal-line">---</div>
+          </div>
+          <div class="terminal-input-line">
+            <span class="terminal-prompt">visitor@portfolio:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" autofocus>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dock -->
+    <div id="dock-container">
+      <div id="dock">
+        <div class="dock-items" id="dock-items">
+          <button class="dock-item" data-window="about" title="About Me">
+            <span class="dock-icon">👩🏻‍💻</span>
+          </button>
+          <button class="dock-item" data-window="projects" title="Projects">
+            <span class="dock-icon">⭐</span>
+          </button>
+          <!-- <button class="dock-item" data-window="skills" title="Skills">
+            <span class="dock-icon">⭐</span>
+          </button> -->
+          <button class="dock-item" data-window="experience" title="Experience">
+            <span class="dock-icon">📚</span>
+          </button>
+          <button class="dock-item" data-window="finder" title="Files">
+            <span class="dock-icon">📁</span>
+          </button>
+          <button class="dock-item" data-window="terminal" title="Terminal">
+            <span class="dock-icon">💻</span>
+          </button>
+          <button class="dock-item" data-window="settings" title="Settings">
+            <span class="dock-icon">⚙️</span>
+          </button>
+          <div class="dock-divider"></div>
+          <div class="dock-open-windows" id="dock-open-windows">
+            <!-- Open windows will appear here as icons -->
+          </div>
+        </div>
+      </div>
+      <div class="dock-clock" id="clock"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

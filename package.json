@@ -1,0 +1,17 @@
+{
+  "name": "desktop-portfolio",
+  "version": "1.0.0",
+  "description": "A cute desktop simulation portfolio website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["portfolio", "desktop", "simulation"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}
