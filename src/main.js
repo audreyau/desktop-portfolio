@@ -285,75 +285,48 @@ function isMobile() {
 function initializeIcons() {
   const icons = document.querySelectorAll('.icon');
   const desktop = document.getElementById('desktop');
-  
+
   // Load saved positions (only on desktop)
   if (!isMobile()) {
     loadIconPositions();
   }
-  
+
   icons.forEach(icon => {
-    // Single click for mobile, double-click for desktop
+    const windowId = icon.getAttribute('data-window');
+
+    // Add click event listener to open the corresponding window
     icon.addEventListener('click', (e) => {
-      if (isMobile()) {
-        e.preventDefault();
-        const windowId = icon.dataset.window;
+      if (!iconDragState.hasMoved && windowId) {
         openWindow(windowId);
       }
     });
-    
-    // Double-click to open (more reliable when dragging is enabled on desktop)
-    icon.addEventListener('dblclick', (e) => {
-      if (!isMobile()) {
-        e.preventDefault();
-        const windowId = icon.dataset.window;
-        openWindow(windowId);
-      }
-    });
-    
-    // Mouse down - start potential drag (desktop only)
+
+    // Add drag and drop functionality
     icon.addEventListener('mousedown', (e) => {
-      if (isMobile()) return; // No drag on mobile
-      if (e.button !== 0) return; // Only left click
-      
+      if (e.button !== 0) return; // Only allow left-click dragging
       iconDragState.isDragging = true;
       iconDragState.currentIcon = icon;
       iconDragState.startX = e.clientX;
       iconDragState.startY = e.clientY;
-      iconDragState.hasMoved = false;
-      
-      // Get current position
       const rect = icon.getBoundingClientRect();
-      const desktopRect = desktop.getBoundingClientRect();
-      iconDragState.iconStartX = rect.left - desktopRect.left;
-      iconDragState.iconStartY = rect.top - desktopRect.top;
-      
-      icon.classList.add('dragging');
-      e.preventDefault();
+      iconDragState.iconStartX = rect.left;
+      iconDragState.iconStartY = rect.top;
+      iconDragState.hasMoved = false;
     });
   });
-  
+
   // Global mouse move for icon dragging
   document.addEventListener('mousemove', handleIconDrag);
-  
+
   // Global mouse up
   document.addEventListener('mouseup', (e) => {
-    if (iconDragState.isDragging && iconDragState.currentIcon) {
-      const icon = iconDragState.currentIcon;
-      icon.classList.remove('dragging');
-      
-      // If barely moved, treat as click (desktop behavior)
-      if (!iconDragState.hasMoved && !isMobile()) {
-        const windowId = icon.dataset.window;
-        openWindow(windowId);
-      } else if (iconDragState.hasMoved) {
-        // Save positions after drag
+    if (iconDragState.isDragging) {
+      iconDragState.isDragging = false;
+      if (iconDragState.hasMoved) {
         saveIconPositions();
       }
+      iconDragState.currentIcon = null;
     }
-    
-    iconDragState.isDragging = false;
-    iconDragState.currentIcon = null;
-    iconDragState.hasMoved = false;
   });
 }
 
