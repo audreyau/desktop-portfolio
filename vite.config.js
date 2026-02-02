@@ -1,15 +1,17 @@
 import { defineConfig } from 'vite'
+import path from 'path-browserify'
 
 export default defineConfig({
   base: '/desktop-portfolio/',
-  build: {
-    rollupOptions: {
-      external: ['fsevents'], 
-    }
-  },
   resolve: {
     alias: {
-      path: 'path-browserify',
+      'path': 'path-browserify',
+      'node:path': 'path-browserify',
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: ['fsevents'],
     },
   },
 })

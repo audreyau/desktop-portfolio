@@ -8,10 +8,17 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": ["portfolio", "desktop", "simulation"],
+  "keywords": [
+    "portfolio",
+    "desktop",
+    "simulation"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "path-browserify": "^1.0.1"
   }
 }
