@@ -441,6 +441,12 @@ function openProjectDetail(projectId) {
     return;
   }
 
+  // Unmaximize the projects window if it is maximized
+  const projectsWindowState = state.windows['projects'];
+  if (projectsWindowState && projectsWindowState.isMaximized) {
+    maximizeWindow('projects'); // This will unmaximize the window
+  }
+
   // Create a new window for this project
   const windowHtml = `
     <div class="window window-large" id="window-${windowId}" style="display: none;">

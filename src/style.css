@@ -502,11 +502,10 @@ body {
   padding: 24px;
   height: calc(100% - 38px);
   overflow: auto;
-  padding: 10px; /* Add padding for better spacing */
-  box-sizing: border-box; /* Ensure padding is included in the height calcu
-  /* overflow-y: auto; */
+  box-sizing: border-box;
   color: var(--text-primary);
-  display: flex;
+  
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -516,11 +515,8 @@ body {
 
 .about-content {
   text-align: center;
-  padding: 40px 20px;
-  flex: 1;            /* This forces it to stretch to the bottom */
-  height: 100%;       /* Ensures it fills the height */  
-  overflow-y: auto;   /* Adds a scrollbar if the bio gets too long */
-  width: 80vw;
+  padding: 40px 20px 0 20px;
+  /* width: 80vw; */
 }
 
 .avatar img {
@@ -560,7 +556,7 @@ body {
 }
 
 .quick-facts {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, #f6f8fb 0%, #f1f4f9 100%);
@@ -578,6 +574,7 @@ body {
 }
 
 .about-contact {
+  /* background-color: #00ff88; */
   margin-top: 35px;
   padding-top: 30px;
   border-top: 1px solid #e8e8ea;
