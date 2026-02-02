@@ -4,10 +4,12 @@ export default defineConfig({
   base: '/desktop-portfolio/',
   build: {
     rollupOptions: {
-      external: ['fsevents']
+      external: ['fsevents'], 
     }
   },
-  optimizeDeps: {
-    exclude: ['fsevents']
-  }
+  resolve: {
+    alias: {
+      path: 'path-browserify',
+    },
+  },
 })
